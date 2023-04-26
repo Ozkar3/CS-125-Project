@@ -1,2 +1,2 @@
 # CS-125-Project
-Happy Panda App
+Happy Panda Wellness App
