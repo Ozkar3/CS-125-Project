@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Firebase
 
 struct ContentView: View {
     @State private var username = ""
@@ -39,7 +40,7 @@ struct ContentView: View {
             //.offset(y:50)
             
             Button {
-                
+                register()
             } label: {
                 Text("Log In")
                     .foregroundColor(.white)
@@ -50,22 +51,32 @@ struct ContentView: View {
                     ).foregroundColor(.black)
                     //.offset(y:80)
                 }
-            
-            
-            
-            
-            
-            
-            
-            
-            
-               
+
             Image("panda")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .offset(y:100)
+            
+            
+            
         }
     }
+    
+    
+    
+    func register() {
+        Auth.auth().createUser(withEmail: username, password: password) {
+            result, error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
+    
+    
+    
+    
+    
 }
 
 
