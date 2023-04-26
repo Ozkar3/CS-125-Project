@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		9B5BB3E529F8E66A003A91E6 /* Happy_PandaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */; };
-		9B5BB3E729F8E66A003A91E6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E629F8E66A003A91E6 /* ContentView.swift */; };
+		9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E629F8E66A003A91E6 /* LoginView.swift */; };
 		9B5BB3E929F8E66C003A91E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */; };
 		9B5BB3EC29F8E66C003A91E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */; };
 		9BF7136C29F92A3100AE2CC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */; };
@@ -19,7 +19,7 @@
 /* Begin PBXFileReference section */
 		9B5BB3E129F8E66A003A91E6 /* Happy Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Panda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_PandaApp.swift; sourceTree = "<group>"; };
-		9B5BB3E629F8E66A003A91E6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		9B5BB3E629F8E66A003A91E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -58,7 +58,7 @@
 			isa = PBXGroup;
 			children = (
 				9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */,
-				9B5BB3E629F8E66A003A91E6 /* ContentView.swift */,
+				9B5BB3E629F8E66A003A91E6 /* LoginView.swift */,
 				9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */,
 				9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */,
 				9B5BB3EA29F8E66C003A91E6 /* Preview Content */,
@@ -152,7 +152,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9B5BB3E729F8E66A003A91E6 /* ContentView.swift in Sources */,
+				9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */,
 				9B5BB3E529F8E66A003A91E6 /* Happy_PandaApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

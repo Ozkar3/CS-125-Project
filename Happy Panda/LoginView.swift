@@ -1,15 +1,14 @@
 //
-//  ContentView.swift
-//  Happy Panda
+//  LoginView.swift
+//  Happy Panda Wellness App
 //
-//  Created by Oscar Zaragoza on 4/25/23.
 //
 
 import SwiftUI
 import Firebase
 
-struct ContentView: View {
-    @State private var username = ""
+struct LoginView: View {
+    @State private var email = ""
     @State private var password = ""
     
     var body: some View {
@@ -21,18 +20,18 @@ struct ContentView: View {
                 .offset(y:-10)
             
             TextField(
-                    "User name",
-                    text: $username)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .padding(.all,15)
-                    //.padding(.trailing,35)
-                    .border(.black,width: 5)
-                    .frame(width: 315)
-                    //.offset(y:50)
+                "Username",
+                text: $email)
+            .autocapitalization(.none)
+            .disableAutocorrection(true)
+            .padding(.all,15)
+            //.padding(.trailing,35)
+            .border(.black,width: 5)
+            .frame(width: 315)
+            //.offset(y:50)
             SecureField(
-                    "Password",
-                    text: $password)
+                "Password",
+                text: $password)
             .padding(.all,15)
             //.padding(.trailing,35)
             .border(.black,width: 5)
@@ -40,18 +39,18 @@ struct ContentView: View {
             //.offset(y:50)
             
             Button {
-                register()
+                register() // will fix this only registers users no login
             } label: {
                 Text("Log In")
                     .foregroundColor(.white)
-                    //.bold()
+                //.bold()
                     .fontWeight(.heavy)
                     .frame(width: 150, height: 45)
                     .background(RoundedRectangle(cornerRadius: 5)
                     ).foregroundColor(.black)
-                    //.offset(y:80)
-                }
-
+                //.offset(y:80)
+            }
+            
             Image("panda")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
@@ -61,12 +60,8 @@ struct ContentView: View {
             
         }
     }
-    
-    
-    
-    func register() {
-        Auth.auth().createUser(withEmail: username, password: password) {
-            result, error in
+    func login() {
+        Auth.auth().signIn(withEmail: email, link: password) { result, error in
             if error != nil {
                 print(error!.localizedDescription)
             }
@@ -74,16 +69,21 @@ struct ContentView: View {
     }
     
     
-    
-    
-    
+    func register() {
+        Auth.auth().createUser(withEmail: email, password: password) {
+            result, error in
+            if error != nil {
+                print(error!.localizedDescription)
+            }
+        }
+    }
 }
 
 
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LoginView()
     }
 }
 

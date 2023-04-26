@@ -1,9 +1,9 @@
-//
+//  CS 125
 //  Happy_PandaApp.swift
-//  Happy Panda
+//  Happy Panda Wellness App
 //
-//  Created by Oscar Zaragoza on 4/25/23.
 //
+
 
 import SwiftUI
 import Firebase
@@ -25,7 +25,7 @@ struct Happy_PandaApp: App {
     
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            LoginView()
         }
     }
 }
