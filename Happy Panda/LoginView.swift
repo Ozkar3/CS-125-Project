@@ -39,7 +39,7 @@ struct LoginView: View {
             //.offset(y:50)
             
             Button {
-                register() // will fix this only registers users no login
+                login() // will fix this
             } label: {
                 Text("Log In")
                     .foregroundColor(.white)
@@ -60,11 +60,17 @@ struct LoginView: View {
             
         }
     }
+
     func login() {
-        Auth.auth().signIn(withEmail: email, link: password) { result, error in
+        Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
             if error != nil {
                 print(error!.localizedDescription)
             }
+            else {
+                print("logged in!")
+            }
+         
+          // ...
         }
     }
     
