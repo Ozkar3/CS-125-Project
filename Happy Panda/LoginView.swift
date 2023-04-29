@@ -1,4 +1,4 @@
-//  CS 125 ..
+//  CS 125
 //  LoginView.swift
 //  Happy Panda Wellness App
 //
@@ -39,57 +39,54 @@ struct LoginView: View {
             //.offset(y:50)
             
             Button {
-                login() // will fix this
+                registerLogin()
             } label: {
-                Text("Log In")
+                Text("Register / Log In")
                     .foregroundColor(.white)
                 //.bold()
                     .fontWeight(.heavy)
-                    .frame(width: 150, height: 45)
+                    .frame(width: 200, height: 45)
                     .background(RoundedRectangle(cornerRadius: 5)
                     ).foregroundColor(.black)
-                //.offset(y:80)
+                    .offset(y:20)
             }
             
             Image("panda")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .offset(y:100)
-            
-            
-            
-        }
-    }
-
-    func login() {
-        Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
-            if error != nil {
-                print(error!.localizedDescription)
-            }
-            else {
-                print("logged in!")
-            }
-         
-          // ...
         }
     }
     
     
-    func register() {
+    // this happens when user taps on "Register/Login" button
+    // first tries to register user given email & pass
+    // if detects already user then logs them in otherwise registers user
+    
+    func registerLogin() {
         Auth.auth().createUser(withEmail: email, password: password) {
             result, error in
             if error != nil {
                 print(error!.localizedDescription)
+                Auth.auth().signIn(withEmail: email, password: password) {  authResult, error in
+                    if error != nil {
+                        print(error!.localizedDescription)
+                    }
+                    else {
+                        print("User logged in!")
+                    }
+                }
+            }
+            else {
+                print("Account created and logged in!")
             }
         }
     }
+    
 }
-
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         LoginView()
     }
 }
-
