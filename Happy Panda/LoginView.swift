@@ -1,4 +1,4 @@
-//  CS 125
+//  CS 125 - Group 10
 //  LoginView.swift
 //  Happy Panda Wellness App
 //
@@ -10,9 +10,20 @@ import Firebase
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
+    @State private var userLoggedIn = false
     
     var body: some View {
+        if userLoggedIn {
+            SleepView() // this can be changed to whatever the next screen is after user logs in
+        }
+        else {
+            registerLoginScreen
+        }
+    }
+    
+    var registerLoginScreen: some View {
         VStack(spacing:30) {
+            
             Text("HAPPY PANDA")
                 .font( .system(size:45))
                 .fontWeight(.heavy)
@@ -38,12 +49,12 @@ struct LoginView: View {
             .frame(width: 315)
             //.offset(y:50)
             
+            // NavigationLink(destination: HomeView()), isActive:
             Button {
                 registerLogin()
             } label: {
                 Text("Register / Log In")
                     .foregroundColor(.white)
-                //.bold()
                     .fontWeight(.heavy)
                     .frame(width: 200, height: 45)
                     .background(RoundedRectangle(cornerRadius: 5)
@@ -59,9 +70,10 @@ struct LoginView: View {
     }
     
     
-    // this happens when user taps on "Register/Login" button
-    // first tries to register user given email & pass
-    // if detects already user then logs them in otherwise registers user
+    // when user taps on "Register/Login" button
+    // first tries to register user given email & password
+    // if detects already user then logs them in
+    // if not then registers user and then logs in
     
     func registerLogin() {
         Auth.auth().createUser(withEmail: email, password: password) {
@@ -74,11 +86,13 @@ struct LoginView: View {
                     }
                     else {
                         print("User logged in!")
+                        userLoggedIn.toggle()
                     }
                 }
             }
             else {
                 print("Account created and logged in!")
+                userLoggedIn.toggle()
             }
         }
     }
