@@ -1,4 +1,4 @@
-//  CS 125
+//  CS 125 - Group 10
 //  Happy_PandaApp.swift
 //  Happy Panda Wellness App
 //

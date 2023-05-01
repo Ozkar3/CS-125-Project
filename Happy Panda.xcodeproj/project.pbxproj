@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9B33A9D729FCFF5C00505E48 /* SleepView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B33A9D629FCFF5C00505E48 /* SleepView.swift */; };
 		9B5BB3E529F8E66A003A91E6 /* Happy_PandaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */; };
 		9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E629F8E66A003A91E6 /* LoginView.swift */; };
 		9B5BB3E929F8E66C003A91E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9B33A9D629FCFF5C00505E48 /* SleepView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepView.swift; sourceTree = "<group>"; };
 		9B5BB3E129F8E66A003A91E6 /* Happy Panda.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Happy Panda.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Happy_PandaApp.swift; sourceTree = "<group>"; };
 		9B5BB3E629F8E66A003A91E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 			children = (
 				9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */,
 				9B5BB3E629F8E66A003A91E6 /* LoginView.swift */,
+				9B33A9D629FCFF5C00505E48 /* SleepView.swift */,
 				9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */,
 				9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */,
 				9B5BB3EA29F8E66C003A91E6 /* Preview Content */,
@@ -152,6 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B33A9D729FCFF5C00505E48 /* SleepView.swift in Sources */,
 				9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */,
 				9B5BB3E529F8E66A003A91E6 /* Happy_PandaApp.swift in Sources */,
 			);
