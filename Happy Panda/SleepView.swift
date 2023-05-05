@@ -8,7 +8,7 @@ import SwiftUI
 
 struct SleepView: View {
     var body: some View {
-        Text("Sleep Page - Stuff goes here")
+        Text("Page after login - Stuff goes here")
     }
 }
 
