@@ -14,7 +14,9 @@ struct LoginView: View {
     
     var body: some View {
         if userLoggedIn {
-            SleepView() // this can be changed to whatever the next screen is after user logs in
+            // -----------------------------------------------------------
+            SleepView() // change to whatever screen is after user logs in
+            // -----------------------------------------------------------
         }
         else {
             registerLoginScreen
@@ -22,13 +24,26 @@ struct LoginView: View {
     }
     
     var registerLoginScreen: some View {
-        VStack(spacing:30) {
+        VStack(spacing:0) {
+            Text("Discover Wellness with")
+                .multilineTextAlignment(.trailing)
+                .foregroundColor(.black)
+                .fontWeight(.regular)
+                .font( .system(size:18))
             
             Text("HAPPY PANDA")
                 .font( .system(size:45))
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.center)
-                .offset(y:-10)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
+                .foregroundColor(.black)
+            // ---------------------------------------------------------
+            Text("A HEALTHIER HAPPIER YOU") // change to whatever slogan
+            // ---------------------------------------------------------
+                .font( .system(size:18))
+                .fontWeight(.bold)
+                .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
+                .foregroundColor(.green)
             
             TextField(
                 "Username",
@@ -36,20 +51,20 @@ struct LoginView: View {
             .autocapitalization(.none)
             .disableAutocorrection(true)
             .padding(.all,15)
-            //.padding(.trailing,35)
-            .border(.black,width: 5)
+            .border(.black,width: 3.5)
             .frame(width: 315)
-            //.offset(y:50)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
+            .foregroundColor(.green)
+            
             SecureField(
                 "Password",
                 text: $password)
             .padding(.all,15)
-            //.padding(.trailing,35)
-            .border(.black,width: 5)
+            .border(.black,width: 3.5)
             .frame(width: 315)
-            //.offset(y:50)
+            .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
+            .foregroundColor(.green)
             
-            // NavigationLink(destination: HomeView()), isActive:
             Button {
                 registerLogin()
             } label: {
@@ -58,7 +73,7 @@ struct LoginView: View {
                     .fontWeight(.heavy)
                     .frame(width: 200, height: 45)
                     .background(RoundedRectangle(cornerRadius: 5)
-                    ).foregroundColor(.black)
+                    ).foregroundColor(.green)
                     .offset(y:20)
             }
             
@@ -96,7 +111,6 @@ struct LoginView: View {
             }
         }
     }
-    
 }
 
 struct ContentView_Previews: PreviewProvider {
