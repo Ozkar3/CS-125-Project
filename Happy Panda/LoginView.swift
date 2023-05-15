@@ -7,6 +7,32 @@
 import SwiftUI
 import Firebase
 
+struct LabelledDivider: View {
+
+    let label: String
+    let horizontalPadding: CGFloat
+    let color: Color
+
+    init(label: String, horizontalPadding: CGFloat = 5, color: Color = .gray) {
+        self.label = label
+        self.horizontalPadding = horizontalPadding
+        self.color = color
+    }
+
+    var body: some View {
+        HStack {
+            line
+            Text(label).foregroundColor(color)
+            line
+        }
+    }
+
+    var line: some View {
+        VStack { Divider().background(color).frame(width:120,height:2) }.padding(horizontalPadding)
+    }
+}
+
+
 struct LoginView: View {
     @State private var email = ""
     @State private var password = ""
@@ -14,9 +40,7 @@ struct LoginView: View {
     
     var body: some View {
         if userLoggedIn {
-            // -----------------------------------------------------------
-            SleepView() // change to whatever screen is after user logs in
-            // -----------------------------------------------------------
+            SleepView() // this can be changed to whatever the next screen is after user logs in
         }
         else {
             registerLoginScreen
@@ -25,62 +49,93 @@ struct LoginView: View {
     
     var registerLoginScreen: some View {
         VStack(spacing:0) {
+            
             Text("Discover Wellness with")
                 .multilineTextAlignment(.trailing)
                 .foregroundColor(.black)
-                .fontWeight(.regular)
-                .font( .system(size:18))
+                //.fontWeight(.regular)
+                .font(Font.custom("Montserrat-Medium", size:20))
+                
             
             Text("HAPPY PANDA")
-                .font( .system(size:45))
+                .font(Font.custom("Montserrat-Bold", size:45))
                 .fontWeight(.heavy)
                 .multilineTextAlignment(.center)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0))
                 .foregroundColor(.black)
+                
             // ---------------------------------------------------------
             Text("A HEALTHIER HAPPIER YOU") // change to whatever slogan
             // ---------------------------------------------------------
-                .font( .system(size:18))
+                .font(Font.custom("Montserrat-SemiBold", size:20))
                 .fontWeight(.bold)
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
-                .foregroundColor(.green)
+                .foregroundColor(Color(red: 0.275, green: 0.455, blue: 0.098))
+            
+            Image("panda")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width:350, height:200)
+                .offset(y:-60)
+                
             
             TextField(
-                "Username",
+                "Email Address",
                 text: $email)
             .autocapitalization(.none)
             .disableAutocorrection(true)
-            .padding(.all,15)
-            .border(.black,width: 3.5)
-            .frame(width: 315)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 20, trailing: 0))
-            .foregroundColor(.green)
+            .padding(.all,15.0)
+            //.padding(.trailing,35)
+            //.border(.gray,width: 2)
+            .frame(width: 300)
+            .overlay(RoundedRectangle(cornerRadius:30).stroke(.gray,lineWidth: 2))
+            .offset(y:-70)
+            .font(.custom("Montserrat-Regular", size:20))
+            
             
             SecureField(
                 "Password",
                 text: $password)
             .padding(.all,15)
-            .border(.black,width: 3.5)
-            .frame(width: 315)
-            .padding(EdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0))
-            .foregroundColor(.green)
+            //.padding(.trailing,35)
+            //.border(.gray,width: 2)
+            .overlay(RoundedRectangle(cornerRadius:30).stroke(.gray,lineWidth: 2))
+            .frame(width: 300)
+            .offset(y:-50)
+            .font(.custom("Montserrat-Regular", size:20))
+
             
+            // NavigationLink(destination: HomeView()), isActive:
             Button {
                 registerLogin()
             } label: {
-                Text("Register / Log In")
+                Text("Login")
                     .foregroundColor(.white)
                     .fontWeight(.heavy)
-                    .frame(width: 200, height: 45)
-                    .background(RoundedRectangle(cornerRadius: 5)
-                    ).foregroundColor(.green)
-                    .offset(y:20)
+                    .font(.custom("Montserrat-Bold", size:20))
+                    .frame(width: 300, height: 45)
+                    .background(Color(red: 0.275, green: 0.455, blue: 0.098))
+                    .cornerRadius(25)
+                    .offset(y:-35)
             }
             
-            Image("panda")
-                .resizable()
-                .aspectRatio(contentMode: .fit)
-                .offset(y:100)
+            LabelledDivider(label: "or")
+                .offset(y:-30)
+            
+            Button {
+                //registerLogin()
+            } label: {
+                Text("Register")
+                    .foregroundColor(.white)
+                    .fontWeight(.heavy)
+                    .font(.custom("Montserrat-Bold", size:20))
+                    .frame(width: 300, height: 45)
+                    .background(Color(red: 0.51, green: 0.737, blue: 0.286)) // #82bc49
+                    .cornerRadius(25)
+                    .offset(y:-25)
+            }
+            
+            
         }
     }
     
@@ -111,6 +166,7 @@ struct LoginView: View {
             }
         }
     }
+    
 }
 
 struct ContentView_Previews: PreviewProvider {
