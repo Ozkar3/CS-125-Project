@@ -23,6 +23,9 @@ struct LoginView: View {
     }
     
     var registerLoginScreen: some View {
+            Color(red: 0.937, green: 0.945, blue: 0.961) // #eff1f5
+            .ignoresSafeArea()
+            .overlay(
         VStack(spacing:0) {
             
             Text("Discover Wellness with")
@@ -47,7 +50,7 @@ struct LoginView: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
                 .foregroundColor(Color(red: 0.275, green: 0.455, blue: 0.098))
             
-            Image("panda")
+            Image("panda-nb")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width:350, height:200)
@@ -57,16 +60,17 @@ struct LoginView: View {
             TextField(
                 "Email Address",
                 text: $email)
+            
             .autocapitalization(.none)
             .disableAutocorrection(true)
             .padding(.all,15.0)
             //.padding(.trailing,35)
-            //.border(.gray,width: 2)
+            .background(.white)
+            .cornerRadius(30)
+            .shadow(color: .black.opacity(0.2), radius: 5, x:0, y:4)
             .frame(width: 300)
-            .overlay(RoundedRectangle(cornerRadius:30).stroke(.gray,lineWidth: 2))
             .offset(y:-70)
             .font(.custom("Montserrat-Regular", size:20))
-            
             
             SecureField(
                 "Password",
@@ -74,7 +78,10 @@ struct LoginView: View {
             .padding(.all,15)
             //.padding(.trailing,35)
             //.border(.gray,width: 2)
-            .overlay(RoundedRectangle(cornerRadius:30).stroke(.gray,lineWidth: 2))
+            .background(.white)
+            .cornerRadius(30)
+            .shadow(color: .black.opacity(0.2), radius: 5, x:0, y:4)
+            //.overlay(RoundedRectangle(cornerRadius:30).stroke(.gray,lineWidth: 2))
             .frame(width: 300)
             .offset(y:-50)
             .font(.custom("Montserrat-Regular", size:20))
@@ -92,9 +99,10 @@ struct LoginView: View {
                     .background(Color(red: 0.275, green: 0.455, blue: 0.098))
                     .cornerRadius(25)
                     .offset(y:-35)
+                    .shadow(color: .black.opacity(0.2), radius: 5, x:0, y:4)
             }
             
-            LabelledDivider(label: "or")
+            LabelledDivider(label: "or",color:Color(red: 0.498, green: 0.494, blue: 0.51))
                 .offset(y:-30)
             
             Button {
@@ -108,10 +116,12 @@ struct LoginView: View {
                     .background(Color(red: 0.51, green: 0.737, blue: 0.286)) // #82bc49
                     .cornerRadius(25)
                     .offset(y:-25)
+                    .shadow(color: .black.opacity(0.2), radius: 5, x:0, y:4)
             }
             
             
         }
+        )
     }
     
     
