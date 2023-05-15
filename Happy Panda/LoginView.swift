@@ -15,7 +15,7 @@ struct LoginView: View {
     
     var body: some View {
         if userLoggedIn {
-            SleepView() // this can be changed to whatever the next screen is after user logs in
+            NavigationView() // this can be changed to whatever the next screen is after user logs in
         }
         else {
             registerLoginScreen

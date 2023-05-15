@@ -6,14 +6,14 @@
 
 import SwiftUI
 
-struct SleepView: View {
+struct Sleep: View {
     var body: some View {
-        Text("Page after login - Stuff goes here")
+        Text("hi")
     }
 }
 
-struct HomeView_Previews: PreviewProvider {
+struct Sleep_Previews: PreviewProvider {
     static var previews: some View {
-        SleepView()
+        Sleep()
     }
 }
