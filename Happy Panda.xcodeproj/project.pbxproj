@@ -15,6 +15,7 @@
 		9BF7136C29F92A3100AE2CC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */; };
 		9BF7136F29F92BBA00AE2CC2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7136E29F92BBA00AE2CC2 /* FirebaseAuth */; };
 		9BF7137129F92BBA00AE2CC2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7137029F92BBA00AE2CC2 /* FirebaseFirestore */; };
+		DC1FD8142A12D8370093232A /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FD8132A12D8370093232A /* LabelledDivider.swift */; };
 		DC7796D32A12100C001EB9CB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D22A12100C001EB9CB /* Montserrat-Bold.ttf */; };
 		DC7796D52A121018001EB9CB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D42A121018001EB9CB /* Montserrat-Medium.ttf */; };
 		DC7796D72A121023001EB9CB /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D62A121023001EB9CB /* Montserrat-SemiBold.ttf */; };
@@ -29,6 +30,7 @@
 		9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DC1FD8132A12D8370093232A /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
 		DC7796D22A12100C001EB9CB /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
 		DC7796D42A121018001EB9CB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
 		DC7796D62A121023001EB9CB /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 				DC7796DA2A121097001EB9CB /* Happy-Panda-Info.plist */,
 				9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */,
 				9B5BB3E629F8E66A003A91E6 /* LoginView.swift */,
+				DC1FD8122A12D8220093232A /* Components */,
 				9B33A9D629FCFF5C00505E48 /* SleepView.swift */,
 				9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */,
 				DC7796D12A120FE7001EB9CB /* Fonts */,
@@ -86,6 +89,14 @@
 				9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC1FD8122A12D8220093232A /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DC1FD8132A12D8370093232A /* LabelledDivider.swift */,
+			);
+			path = Components;
 			sourceTree = "<group>";
 		};
 		DC7796D12A120FE7001EB9CB /* Fonts */ = {
@@ -181,6 +192,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC1FD8142A12D8370093232A /* LabelledDivider.swift in Sources */,
 				9B33A9D729FCFF5C00505E48 /* SleepView.swift in Sources */,
 				9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */,
 				9B5BB3E529F8E66A003A91E6 /* Happy_PandaApp.swift in Sources */,
