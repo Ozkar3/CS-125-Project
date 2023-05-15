@@ -15,6 +15,10 @@
 		9BF7136C29F92A3100AE2CC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */; };
 		9BF7136F29F92BBA00AE2CC2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7136E29F92BBA00AE2CC2 /* FirebaseAuth */; };
 		9BF7137129F92BBA00AE2CC2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7137029F92BBA00AE2CC2 /* FirebaseFirestore */; };
+		DC7796D32A12100C001EB9CB /* Montserrat-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D22A12100C001EB9CB /* Montserrat-Bold.ttf */; };
+		DC7796D52A121018001EB9CB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D42A121018001EB9CB /* Montserrat-Medium.ttf */; };
+		DC7796D72A121023001EB9CB /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D62A121023001EB9CB /* Montserrat-SemiBold.ttf */; };
+		DC7796D92A121029001EB9CB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D82A121029001EB9CB /* Montserrat-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +29,11 @@
 		9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		DC7796D22A12100C001EB9CB /* Montserrat-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Bold.ttf"; sourceTree = "<group>"; };
+		DC7796D42A121018001EB9CB /* Montserrat-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Medium.ttf"; sourceTree = "<group>"; };
+		DC7796D62A121023001EB9CB /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
+		DC7796D82A121029001EB9CB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
+		DC7796DA2A121097001EB9CB /* Happy-Panda-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Happy-Panda-Info.plist"; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,10 +68,12 @@
 		9B5BB3E329F8E66A003A91E6 /* Happy Panda */ = {
 			isa = PBXGroup;
 			children = (
+				DC7796DA2A121097001EB9CB /* Happy-Panda-Info.plist */,
 				9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */,
 				9B5BB3E629F8E66A003A91E6 /* LoginView.swift */,
 				9B33A9D629FCFF5C00505E48 /* SleepView.swift */,
 				9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */,
+				DC7796D12A120FE7001EB9CB /* Fonts */,
 				9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */,
 				9B5BB3EA29F8E66C003A91E6 /* Preview Content */,
 			);
@@ -75,6 +86,17 @@
 				9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		DC7796D12A120FE7001EB9CB /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				DC7796D22A12100C001EB9CB /* Montserrat-Bold.ttf */,
+				DC7796D62A121023001EB9CB /* Montserrat-SemiBold.ttf */,
+				DC7796D42A121018001EB9CB /* Montserrat-Medium.ttf */,
+				DC7796D82A121029001EB9CB /* Montserrat-Regular.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +164,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DC7796D72A121023001EB9CB /* Montserrat-SemiBold.ttf in Resources */,
+				DC7796D32A12100C001EB9CB /* Montserrat-Bold.ttf in Resources */,
+				DC7796D92A121029001EB9CB /* Montserrat-Regular.ttf in Resources */,
+				DC7796D52A121018001EB9CB /* Montserrat-Medium.ttf in Resources */,
 				9B5BB3EC29F8E66C003A91E6 /* Preview Assets.xcassets in Resources */,
 				9B5BB3E929F8E66C003A91E6 /* Assets.xcassets in Resources */,
 				9BF7136C29F92A3100AE2CC2 /* GoogleService-Info.plist in Resources */,
@@ -288,6 +314,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Happy Panda/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Happy-Panda-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -316,6 +343,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Happy Panda/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Happy-Panda-Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
