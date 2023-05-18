@@ -15,7 +15,7 @@ struct Food: View {
         NavigationView{
             VStack(alignment: .leading){
                 Text("\(totalCalories()) KCal Today")
-                .foregroundColor(.gray)
+                .foregroundColor(.black)
                 .padding(.horizontal)
                 Section(header: Text("Breakfast").font(.largeTitle)){
                     Divider()
