@@ -50,7 +50,7 @@ struct LoginView: View {
                 .padding(EdgeInsets(top: 0, leading: 0, bottom: 50, trailing: 0))
                 .foregroundColor(Color(red: 0.275, green: 0.455, blue: 0.098))
             
-            Image("panda-nb")
+            Image("panda_paw")
                 .resizable()
                 .aspectRatio(contentMode: .fit)
                 .frame(width:350, height:200)
