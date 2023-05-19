@@ -49,7 +49,7 @@ struct Food: View {
                 }
             }
             .sheet(isPresented: $showingAddingEntry){
-                AddFoodEntry()
+                //AddFoodEntry()
             }
         }
     }

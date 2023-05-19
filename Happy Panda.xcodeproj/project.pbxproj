@@ -16,7 +16,7 @@
 		9BF7136F29F92BBA00AE2CC2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7136E29F92BBA00AE2CC2 /* FirebaseAuth */; };
 		9BF7137129F92BBA00AE2CC2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7137029F92BBA00AE2CC2 /* FirebaseFirestore */; };
 		DC1FD8142A12D8370093232A /* LabelledDivider.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FD8132A12D8370093232A /* LabelledDivider.swift */; };
-		DC1FD8162A12D9A00093232A /* NavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FD8152A12D9A00093232A /* NavigationView.swift */; };
+		DC1FD8162A12D9A00093232A /* NavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FD8152A12D9A00093232A /* NavigationBar.swift */; };
 		DC1FD8192A12D9C40093232A /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FD8182A12D9C40093232A /* Home.swift */; };
 		DC1FD81B2A12DA190093232A /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FD81A2A12DA190093232A /* Profile.swift */; };
 		DC1FD81D2A12DA240093232A /* Activity.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC1FD81C2A12DA240093232A /* Activity.swift */; };
@@ -36,7 +36,7 @@
 		9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC1FD8132A12D8370093232A /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
-		DC1FD8152A12D9A00093232A /* NavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationView.swift; sourceTree = "<group>"; };
+		DC1FD8152A12D9A00093232A /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
 		DC1FD8182A12D9C40093232A /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
 		DC1FD81A2A12DA190093232A /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		DC1FD81C2A12DA240093232A /* Activity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Activity.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 				DC7796DA2A121097001EB9CB /* Happy-Panda-Info.plist */,
 				9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */,
 				9B5BB3E629F8E66A003A91E6 /* LoginView.swift */,
-				DC1FD8152A12D9A00093232A /* NavigationView.swift */,
+				DC1FD8152A12D9A00093232A /* NavigationBar.swift */,
 				DC1FD8172A12D9B20093232A /* Pages */,
 				DC1FD8122A12D8220093232A /* Components */,
 				9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */,
@@ -217,7 +217,7 @@
 			files = (
 				DC1FD8142A12D8370093232A /* LabelledDivider.swift in Sources */,
 				9B33A9D729FCFF5C00505E48 /* Sleep.swift in Sources */,
-				DC1FD8162A12D9A00093232A /* NavigationView.swift in Sources */,
+				DC1FD8162A12D9A00093232A /* NavigationBar.swift in Sources */,
 				DC1FD81B2A12DA190093232A /* Profile.swift in Sources */,
 				9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */,
 				DC1FD81F2A12DA2C0093232A /* Food.swift in Sources */,
