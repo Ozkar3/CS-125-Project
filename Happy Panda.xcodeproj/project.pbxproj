@@ -25,6 +25,12 @@
 		DC7796D52A121018001EB9CB /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D42A121018001EB9CB /* Montserrat-Medium.ttf */; };
 		DC7796D72A121023001EB9CB /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D62A121023001EB9CB /* Montserrat-SemiBold.ttf */; };
 		DC7796D92A121029001EB9CB /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = DC7796D82A121029001EB9CB /* Montserrat-Regular.ttf */; };
+		DCE31E472A1B3B9000D9B1B3 /* SleepCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE31E462A1B3B9000D9B1B3 /* SleepCard.swift */; };
+		DCE31E492A1B3B9D00D9B1B3 /* StepCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE31E482A1B3B9C00D9B1B3 /* StepCard.swift */; };
+		DCE31E4B2A1B3BA700D9B1B3 /* WaterCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE31E4A2A1B3BA700D9B1B3 /* WaterCard.swift */; };
+		DCE31E4D2A1B3E1300D9B1B3 /* LifestyleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE31E4C2A1B3E1300D9B1B3 /* LifestyleCard.swift */; };
+		DCE31E4F2A1B3F7E00D9B1B3 /* FoodCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE31E4E2A1B3F7E00D9B1B3 /* FoodCard.swift */; };
+		DCE31E512A1B434700D9B1B3 /* RecipeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCE31E502A1B434700D9B1B3 /* RecipeCard.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +52,12 @@
 		DC7796D62A121023001EB9CB /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		DC7796D82A121029001EB9CB /* Montserrat-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Montserrat-Regular.ttf"; sourceTree = "<group>"; };
 		DC7796DA2A121097001EB9CB /* Happy-Panda-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "Happy-Panda-Info.plist"; sourceTree = SOURCE_ROOT; };
+		DCE31E462A1B3B9000D9B1B3 /* SleepCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SleepCard.swift; sourceTree = "<group>"; };
+		DCE31E482A1B3B9C00D9B1B3 /* StepCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StepCard.swift; sourceTree = "<group>"; };
+		DCE31E4A2A1B3BA700D9B1B3 /* WaterCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WaterCard.swift; sourceTree = "<group>"; };
+		DCE31E4C2A1B3E1300D9B1B3 /* LifestyleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifestyleCard.swift; sourceTree = "<group>"; };
+		DCE31E4E2A1B3F7E00D9B1B3 /* FoodCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodCard.swift; sourceTree = "<group>"; };
+		DCE31E502A1B434700D9B1B3 /* RecipeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCard.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +118,12 @@
 			isa = PBXGroup;
 			children = (
 				DC1FD8132A12D8370093232A /* LabelledDivider.swift */,
+				DCE31E4C2A1B3E1300D9B1B3 /* LifestyleCard.swift */,
+				DCE31E4E2A1B3F7E00D9B1B3 /* FoodCard.swift */,
+				DCE31E462A1B3B9000D9B1B3 /* SleepCard.swift */,
+				DCE31E482A1B3B9C00D9B1B3 /* StepCard.swift */,
+				DCE31E4A2A1B3BA700D9B1B3 /* WaterCard.swift */,
+				DCE31E502A1B434700D9B1B3 /* RecipeCard.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -216,11 +234,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				DC1FD8142A12D8370093232A /* LabelledDivider.swift in Sources */,
+				DCE31E4F2A1B3F7E00D9B1B3 /* FoodCard.swift in Sources */,
 				9B33A9D729FCFF5C00505E48 /* Sleep.swift in Sources */,
 				DC1FD8162A12D9A00093232A /* NavigationBar.swift in Sources */,
+				DCE31E472A1B3B9000D9B1B3 /* SleepCard.swift in Sources */,
 				DC1FD81B2A12DA190093232A /* Profile.swift in Sources */,
+				DCE31E492A1B3B9D00D9B1B3 /* StepCard.swift in Sources */,
 				9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */,
+				DCE31E4B2A1B3BA700D9B1B3 /* WaterCard.swift in Sources */,
+				DCE31E4D2A1B3E1300D9B1B3 /* LifestyleCard.swift in Sources */,
 				DC1FD81F2A12DA2C0093232A /* Food.swift in Sources */,
+				DCE31E512A1B434700D9B1B3 /* RecipeCard.swift in Sources */,
 				DC1FD8192A12D9C40093232A /* Home.swift in Sources */,
 				DC1FD81D2A12DA240093232A /* Activity.swift in Sources */,
 				9B5BB3E529F8E66A003A91E6 /* Happy_PandaApp.swift in Sources */,
