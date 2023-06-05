@@ -23,9 +23,11 @@ struct Happy_PandaApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    @StateObject var firestoreManager = FirestoreManager()
+    
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LoginView().environmentObject(firestoreManager)
         }
     }
 }

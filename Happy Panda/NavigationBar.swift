@@ -10,6 +10,8 @@ import SwiftUI
 struct NavigationBar: View {
     @State var tabSelection = 1
     
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
     var body: some View {
         TabView(selection: $tabSelection) {
             
@@ -54,7 +56,7 @@ struct NavigationBar: View {
 
 struct NavigationBar_Previews: PreviewProvider {
     static var previews: some View {
-        NavigationBar()
+        NavigationBar().environmentObject(FirestoreManager())
     }
 }
 

@@ -10,6 +10,8 @@ import SwiftUI
 struct Home: View {
     @Binding var tabSelection: Int
     @State var searchText: String = ""
+    
+    @EnvironmentObject var firestoreManager: FirestoreManager
 
     var body: some View {
         
@@ -20,7 +22,7 @@ struct Home: View {
 
             VStack(spacing:10){
                 
-                Text("Welcome, User!")
+                Text("Welcome, \(firestoreManager.userName)")
                     .frame(width: 330,alignment:.leading)
                     .font(Font.custom("Montserrat-SemiBold", size:30))
 
@@ -77,7 +79,7 @@ struct Home: View {
 
 struct Home_Previews: PreviewProvider {
     static var previews: some View {
-        Home(tabSelection: .constant(1))
+        Home(tabSelection: .constant(1)).environmentObject(FirestoreManager())
     }
 }
 

@@ -13,6 +13,8 @@ struct LoginView: View {
     @State private var password = ""
     @State private var userLoggedIn = false
     
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
     var body: some View {
         if userLoggedIn {
             NavigationBar() // this can be changed to whatever the next screen is after user logs in
@@ -142,6 +144,7 @@ struct LoginView: View {
                     else {
                         print("User logged in!")
                         userLoggedIn.toggle()
+                        self.firestoreManager.loadUserData()
                     }
                 }
             }
@@ -156,6 +159,6 @@ struct LoginView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        LoginView()
+        LoginView().environmentObject(FirestoreManager())
     }
 }

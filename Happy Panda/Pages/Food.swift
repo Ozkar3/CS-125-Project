@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct Food: View {
-    @EnvironmentObject var foodData : FoodData
+    //@EnvironmentObject var foodData : FoodData
     @State private var showingAddingEntry = false
     @State private var meals:[String:Double] = ["yogurt": 100] //[String:Int]()
     @State var name = ""
