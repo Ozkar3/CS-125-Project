@@ -17,9 +17,9 @@ struct Profile: View {
     
     // Food Section -------------------------------------
     @State private var nutrition_selection = "Balanced Diet"
-    @State private var allergies_selection = "Peanuts"
+    @State private var allergies_selection = "None"
     let nutrition = ["Balanced Diet", "Vegan"]
-    let allergies = ["Peanuts", "Fish", "Milk", "Shellfish", "Bamboo"]
+    let allergies = ["None", "Peanuts", "Fish", "Milk", "Shellfish", "Bamboo"]
     
     // Excercise Section ----------------------------------------
     @State private var exercise_frequency_selection = "Moderately Active"
