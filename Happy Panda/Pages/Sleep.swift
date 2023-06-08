@@ -1,5 +1,3 @@
-//
-//  Sleep.swift
 //  Happy Panda
 //
 //  Created by Maritza Pott on 5/2/23.
@@ -28,8 +26,14 @@ struct Sleep: View {
             NavigationView {
                 VStack(alignment: .center) {
                     datePickers
-                    RecommendationResults
+                    HStack{
+                        Text("Sleep Results")
+                            .font(.system(size:20))
+                            .bold()
+                    }
+                    .offset(y: -150)
                     
+                    RecommendationResults
                     
                     
                     
@@ -39,6 +43,7 @@ struct Sleep: View {
                 
                 
             }
+            
         }
         
 
@@ -61,8 +66,9 @@ struct Sleep: View {
 
 
             })
+            
             .frame(maxWidth: .infinity, alignment: .center)
-                
+            
             
         
         }
@@ -86,35 +92,53 @@ struct Sleep: View {
     var RecommendationResults: some View{
         
         // we could replace 7 with a variable holding the users age and then recommend appropiate sleeping time
+       
         
         VStack(alignment: .center){
+        
             if (totalHours == 7){
-                Image("happypanda")
-                    .resizable()
-                    .frame(width: 110.0, height: 100.0)
-                Text("good sleep!")
-                    .position(x: 200)
+                Section{
+                    Image("happypanda")
+                        .resizable()
+                        .frame(width: 110.0, height: 100.0)
+                    Text("good sleep!")
+                        .position(x:190, y:10)
+                }
+                .offset(x:0, y:10)
                     
             }
             else if (1 <= totalHours && totalHours < 7){
-                Image("sleepypanda")
-                    .resizable()
-                    .frame(width: 110.0, height: 100.0)
-                Text("Needs Improvement. You need 7 hours of sleep for a great rest")
-                    .padding(5.0)
-                    .position(x:200)
+                
+                Section{
+                    Image("sleepypanda")
+                        .resizable()
+                        .frame(width: 110.0, height: 100.0)
+                    Spacer()
+                    Text("Needs Improvement. You need 7 hours of sleep for a great rest")
+                        .padding(5.0)
+                        .position(x:190, y:10)
+                }
+                .offset(x:0, y:10)
             }
             else if (totalHours > 7){
-                Image("tiredpanda")
-                    .resizable()
-                    .frame(width: 110.0, height: 100.0)
-                Text("Thats too much sleep!")
-                    .padding()
-                    .position(x:200)
+                
+                Section{
+                    Image("tiredpanda")
+                        .resizable()
+                        .frame(width: 110.0, height: 100.0)
+                    Text("Thats too much sleep! Try sleeping within the recommended amount")
+                        .padding()
+                        .position(x:190, y:10)
+                }
+                .offset(x:-3, y:10)
                 
             }
         }
-        
+        .frame(width: 380, height: 230)
+        .padding(.leading)
+        .background(Color(red: 0.51, green: 0.737, blue: 0.286))
+        .cornerRadius(20)
+        .offset(x: 0, y: -140)
         
     }
     
