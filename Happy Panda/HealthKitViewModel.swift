@@ -2,7 +2,6 @@
 //  HealthKitViewModel.swift
 // 
 //
-//  Created by Oscar Zaragoza
 //
 
 import Foundation
@@ -15,19 +14,33 @@ class HealthKitViewModel: ObservableObject {
     @Published var userStepCount = ""
     @Published var userSleepDuration: String?
     @Published var isAuthorized = false
+    @Published var userAge: Int?
+    @Published var userHeight: Double?
+    @Published var userWeight: Double?
+    @Published var userSex: String?
+
+
     
     init() {
         changeAuthorizationStatus()
+//        readAge()
+//            readHeight()
+//            readWeight()
     }
     
-    //MARK: - HealthKit Authorization Request Method
+    //HealthKit Authorization Request Method
     func healthRequest() {
-        healthKitManager.setUpHealthRequest(healthStore: healthStore) {
-            self.changeAuthorizationStatus()
-            self.readStepsTakenToday()
-            self.readSleepDuration()
+            healthKitManager.setUpHealthRequest(healthStore: healthStore) {
+                self.changeAuthorizationStatus()
+                self.readStepsTakenToday()
+                self.readSleepDuration()
+                self.readAge()
+//                self.readHeight()
+//                self.readWeight()
+                self.readSex()
+            }
         }
-    }
+
     
     func changeAuthorizationStatus() {
         guard let stepQtyType = HKObjectType.quantityType(forIdentifier: .stepCount) else { return }
@@ -46,9 +59,56 @@ class HealthKitViewModel: ObservableObject {
             isAuthorized = false
         }
     }
+    func readSex() {
+        healthKitManager.readBiologicalSex(healthStore: healthStore) { sex in
+            DispatchQueue.main.async {
+                let sexString: String
+                switch sex {
+                case .female:
+                    sexString = "Female"
+                case .male:
+                    sexString = "Male"
+                case .other:
+                    sexString = "Other"
+                case .notSet:
+                    sexString = "Not Set"
+                case .none:
+                    sexString = "Not Set"
+                @unknown default:
+                    sexString = "Unknown"
+                }
+                self.userSex = sexString
+            }
+        }
+    }
+
     
+    func readAge() {
+        healthKitManager.readAge(healthStore: healthStore) { age in
+            DispatchQueue.main.async {
+                self.userAge = age
+            }
+        }
+    }
+
+    func readHeight() {
+        healthKitManager.readHeight(healthStore: healthStore) { height in
+            DispatchQueue.main.async {
+                self.userHeight = height
+            }
+        }
+    }
+
+    func readWeight() {
+        healthKitManager.readWeight(healthStore: healthStore) { weight in
+            DispatchQueue.main.async {
+                self.userWeight = weight
+            }
+        }
+    }
+
     
-    //MARK: - Read User's Step Count
+    //Read User's Step Count
     func readStepsTakenToday() {
         healthKitManager.readStepCount(forToday: Date(), healthStore: healthStore) { step in
             if step != 0.0 {
@@ -59,7 +119,7 @@ class HealthKitViewModel: ObservableObject {
         }
     }
     
-    //MARK: - Read User's Sleep Duration
+    //Read User's Sleep Duration
     func readSleepDuration() {
         healthKitManager.readSleepDuration(forDate: Date(), healthStore: healthStore) { duration in
             if duration > 0 {
@@ -74,5 +134,17 @@ class HealthKitViewModel: ObservableObject {
                 }
             }
         }
+    }
+    
+    func getUserAge() -> Int? {
+        let healthStore = HKHealthStore()
+        let healthKitManager = HealthKitManager()
+        var userAge: Int?
+
+        healthKitManager.readAge(healthStore: healthStore) { age in
+            userAge = age
+        }
+
+        return userAge
     }
 }

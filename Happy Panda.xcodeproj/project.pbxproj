@@ -12,6 +12,8 @@
 		9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E629F8E66A003A91E6 /* LoginView.swift */; };
 		9B5BB3E929F8E66C003A91E6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */; };
 		9B5BB3EC29F8E66C003A91E6 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */; };
+		9BB5969B2A3045AD00C8FDF4 /* HealthKitManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5969A2A3045AD00C8FDF4 /* HealthKitManager.swift */; };
+		9BB5969D2A30478D00C8FDF4 /* HealthKitViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BB5969C2A30478D00C8FDF4 /* HealthKitViewModel.swift */; };
 		9BF7136C29F92A3100AE2CC2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */; };
 		9BF7136F29F92BBA00AE2CC2 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7136E29F92BBA00AE2CC2 /* FirebaseAuth */; };
 		9BF7137129F92BBA00AE2CC2 /* FirebaseFirestore in Frameworks */ = {isa = PBXBuildFile; productRef = 9BF7137029F92BBA00AE2CC2 /* FirebaseFirestore */; };
@@ -41,6 +43,9 @@
 		9B5BB3E629F8E66A003A91E6 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9B5BB3EB29F8E66C003A91E6 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		9BB596972A303FD900C8FDF4 /* Happy Panda.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Happy Panda.entitlements"; sourceTree = "<group>"; };
+		9BB5969A2A3045AD00C8FDF4 /* HealthKitManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitManager.swift; sourceTree = "<group>"; };
+		9BB5969C2A30478D00C8FDF4 /* HealthKitViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HealthKitViewModel.swift; sourceTree = "<group>"; };
 		9BF7136B29F92A3000AE2CC2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		DC1FD8132A12D8370093232A /* LabelledDivider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelledDivider.swift; sourceTree = "<group>"; };
 		DC1FD8152A12D9A00093232A /* NavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBar.swift; sourceTree = "<group>"; };
@@ -94,11 +99,14 @@
 		9B5BB3E329F8E66A003A91E6 /* Happy Panda */ = {
 			isa = PBXGroup;
 			children = (
+				9BB596972A303FD900C8FDF4 /* Happy Panda.entitlements */,
 				DC7796DA2A121097001EB9CB /* Happy-Panda-Info.plist */,
 				9B5BB3E429F8E66A003A91E6 /* Happy_PandaApp.swift */,
 				9B5BB3E629F8E66A003A91E6 /* LoginView.swift */,
 				DC1FD8152A12D9A00093232A /* NavigationBar.swift */,
 				DC7453F42A2DDEC2009A8586 /* FirestoreManager.swift */,
+				9BB5969A2A3045AD00C8FDF4 /* HealthKitManager.swift */,
+				9BB5969C2A30478D00C8FDF4 /* HealthKitViewModel.swift */,
 				DC1FD8172A12D9B20093232A /* Pages */,
 				DC1FD8122A12D8220093232A /* Components */,
 				9B5BB3E829F8E66C003A91E6 /* Assets.xcassets */,
@@ -244,9 +252,11 @@
 				DC1FD81B2A12DA190093232A /* Profile.swift in Sources */,
 				DCE31E492A1B3B9D00D9B1B3 /* StepCard.swift in Sources */,
 				9B5BB3E729F8E66A003A91E6 /* LoginView.swift in Sources */,
+				9BB5969B2A3045AD00C8FDF4 /* HealthKitManager.swift in Sources */,
 				DCE31E4B2A1B3BA700D9B1B3 /* WaterCard.swift in Sources */,
 				DCE31E4D2A1B3E1300D9B1B3 /* LifestyleCard.swift in Sources */,
 				DC1FD81F2A12DA2C0093232A /* Food.swift in Sources */,
+				9BB5969D2A30478D00C8FDF4 /* HealthKitViewModel.swift in Sources */,
 				DCE31E512A1B434700D9B1B3 /* RecipeCard.swift in Sources */,
 				DC1FD8192A12D9C40093232A /* Home.swift in Sources */,
 				DC1FD81D2A12DA240093232A /* Activity.swift in Sources */,
@@ -377,12 +387,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Happy Panda/Happy Panda.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Happy Panda/Preview Content\"";
+				DEVELOPMENT_TEAM = G8QWA44WND;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Happy-Panda-Info.plist";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Allow this app to access your Health data to help make recommendations";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow this app to access your Health data to help make recommendations";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Save your health data to healthKit";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -393,6 +408,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CS125.Happy-Panda";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -406,12 +423,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Happy Panda/Happy Panda.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Happy Panda/Preview Content\"";
+				DEVELOPMENT_TEAM = G8QWA44WND;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Happy-Panda-Info.plist";
+				INFOPLIST_KEY_NSHealthClinicalHealthRecordsShareUsageDescription = "Allow this app to access your Health data to help make recommendations";
+				INFOPLIST_KEY_NSHealthShareUsageDescription = "Allow this app to access your Health data to help make recommendations";
+				INFOPLIST_KEY_NSHealthUpdateUsageDescription = "Save your health data to healthKit";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -422,6 +444,8 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
+				NEW_SETTING = "";
+				NEW_SETTING1 = "";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.CS125.Happy-Panda";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;

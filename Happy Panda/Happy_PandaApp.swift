@@ -23,11 +23,22 @@ struct Happy_PandaApp: App {
     // register app delegate for Firebase setup
     @UIApplicationDelegateAdaptor(AppDelegate.self) var delegate
     
+    // HealthKit
+    @StateObject var healthKitViewModel = HealthKitViewModel()
+    
+    // Database
     @StateObject var firestoreManager = FirestoreManager()
     
     var body: some Scene {
         WindowGroup {
-            LoginView().environmentObject(firestoreManager)
+            LoginView()
+                .environmentObject(firestoreManager)
+                .environmentObject(healthKitViewModel)
+            
+            // to skip login screen for quick testing comment ^ and uncomment this v
+            // need to temporarily comment out Text("Welcome, \(firestoreManager.userName)") from home to avoid errors
+            //            NavigationBar()
+            //                .environmentObject(healthKitViewModel)
         }
     }
 }
