@@ -1,3 +1,5 @@
+//
+//  Sleep.swift
 //  Happy Panda
 //
 //  Created by Maritza Pott on 5/2/23.
@@ -11,6 +13,7 @@ struct Sleep: View {
     @State var totalHours = 0
     @State var totalMinutes = 0
     let calendar = Calendar.current
+    @EnvironmentObject var firestoreManager: FirestoreManager
     
     
     
@@ -31,7 +34,7 @@ struct Sleep: View {
                             .font(.system(size:20))
                             .bold()
                     }
-                    .offset(y: -150)
+                    .offset(y: -100)
                     
                     RecommendationResults
                     
@@ -138,7 +141,7 @@ struct Sleep: View {
         .padding(.leading)
         .background(Color(red: 0.51, green: 0.737, blue: 0.286))
         .cornerRadius(20)
-        .offset(x: 0, y: -140)
+        .offset(x: 0, y: -100)
         
     }
     
@@ -150,3 +153,4 @@ struct Sleep_Previews: PreviewProvider {
         Sleep()
     }
 }
+
