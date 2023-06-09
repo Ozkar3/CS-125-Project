@@ -34,7 +34,6 @@ struct Activity: View {
         Workout(id: UUID(), name: "Circuit Training", intensity: "Moderate", score: 0, type: "Home", time: 2.0),
         Workout(id: UUID(), name: "Rowing", intensity: "High", score: 0, type: "Gym", time: 3.0),
         Workout(id: UUID(), name: "Stretching", intensity: "Low", score: 0, type: "Home", time: 1.0),
-        
         Workout(id: UUID(), name: "Boxing", intensity: "High", score: 0, type: "Gym", time: 2.5),
         Workout(id: UUID(), name: "Climbing", intensity: "Moderate", score: 0, type: "Outdoors", time: 2.5),
         Workout(id: UUID(), name: "Jumping Jacks", intensity: "Moderate", score: 0, type: "Home", time: 1.0),
