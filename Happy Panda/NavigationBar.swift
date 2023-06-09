@@ -29,7 +29,7 @@ struct NavigationBar: View {
                 }
                 .tag(2)
             
-            Food()
+            Food(coreDM: DataController())
                 .tabItem(){
                     Image(systemName: "carrot.fill")
                     Text("Food")
