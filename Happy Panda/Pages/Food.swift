@@ -8,14 +8,15 @@
 import SwiftUI
 
 struct Food: View {
-    //@EnvironmentObject var foodData : FoodData
+    let coreDM: DataController
+    @State private var foodlist: [FoodTracker] = [FoodTracker]()
     @State private var showingAddingEntry = false
-    @State private var meals:[String:Double] = ["yogurt": 100] //[String:Int]()
+    
     @State var name = ""
     @State var calories:Double = 0
+    
     var body: some View {
-        let keys = meals.map{$0.key}
-        let values = meals.map{$0.value}
+       
         VStack{
             HStack {
                             
@@ -25,7 +26,7 @@ struct Food: View {
             }
             NavigationView{
                 VStack{
-                    Text("\(totalCalories()) KCal Today")
+                    Text("\(Int(totalCalories())) KCal Today")
                         .foregroundColor(.black)
                         .padding(.horizontal)
                         
@@ -43,7 +44,10 @@ struct Food: View {
                             HStack{
                                 Spacer()
                                 Button("Submit"){
-                                    meals[name] = calories
+
+                                    coreDM.saveFood(name: name, calories: calories)
+                                    populateList()
+                                    
                                 }
                                 
                                 Spacer()
@@ -52,49 +56,54 @@ struct Food: View {
                         }
                         Section(header: Text("Your Entries")){
                             List{
-                                ForEach(keys.indices) {index in
-                                    HStack {
-                                        Text("\(keys[index]) : \(Int(values[index])) calories")
-                                    }
-                                }
+                                ForEach(foodlist, id: \.self){
+                                    item in Text("\(item.name ?? ""): \(Int(item.calories))")
+                                }.onDelete(perform: {item in item.forEach{foods in let updatedfood = foodlist[foods]
+                                    coreDM.deleteFood(food: updatedfood)
+                                    populateList()
+                                }})
                             }
+                            
                         }
                         
                     }
+                    
                     
                     Spacer()
                     
                     
                 }
+                .onAppear(perform: {
+                    foodlist = coreDM.getAllFoods()
+                })
                 
-                //            .toolbar{
-                //                ToolbarItem(placement: .navigationBarTrailing){
-                //                    Button{
-                //                        showingAddingEntry.toggle()
-                //                    } label: {
-                //                        Text("New Entry")
-                //                    }
-                //                }
-                //                ToolbarItem(placement: .navigationBarLeading){
-                //                    EditButton()
-                //                }
-                //            }
-                //            .sheet(isPresented: $showingAddingEntry){
-                //                AddFoodEntry()
-                //            }
+              
             }
         }
     }
         
     
-    private func totalCalories() -> Int{
+    private func totalCalories() -> Double{
         // figure out how to display total calories
-        return 0
+        var sumCalories: Double = 0
+        for item in foodlist {
+            if Calendar.current.isDateInToday(item.date!){
+                
+                sumCalories += item.calories
+                print(sumCalories)
+            }
+        }
+        
+        return sumCalories
+    }
+    private func populateList(){
+        foodlist = coreDM.getAllFoods()
     }
 }
 
 struct Food_Previews: PreviewProvider {
     static var previews: some View {
-        Food()
+        Food(coreDM: DataController())
     }
 }
+
