@@ -34,6 +34,7 @@ struct Happy_PandaApp: App {
             LoginView()
                 .environmentObject(firestoreManager)
                 .environmentObject(healthKitViewModel)
+                .environmentObject(DataController())
             
             // to skip login screen for quick testing comment ^ and uncomment this v
             // need to temporarily comment out Text("Welcome, \(firestoreManager.userName)") from home to avoid errors
