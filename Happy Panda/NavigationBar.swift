@@ -11,6 +11,9 @@ struct NavigationBar: View {
     @State var tabSelection = 1
     
     @EnvironmentObject var firestoreManager: FirestoreManager
+    @StateObject private var sharedData = SharedData()
+    
+    
     
     var body: some View {
         TabView(selection: $tabSelection) {
@@ -37,6 +40,7 @@ struct NavigationBar: View {
                 .tag(3)
             
             Activity()
+                .environmentObject(sharedData)
                 .tabItem(){
                     Image(systemName: "figure.run")
                     Text("Activity")
@@ -44,6 +48,7 @@ struct NavigationBar: View {
                 .tag(4)
             
             Profile()
+                .environmentObject(sharedData)
                 .tabItem(){
                     Image(systemName: "person.fill")
                     Text("Profile")

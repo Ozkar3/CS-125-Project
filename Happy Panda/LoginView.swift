@@ -15,6 +15,8 @@ struct LoginView: View {
 
     @EnvironmentObject var firestoreManager: FirestoreManager
     @EnvironmentObject var vm: HealthKitViewModel
+//    @StateObject var sharedData = SharedData()
+
 
     var body: some View {
         if userLoggedIn {
@@ -163,5 +165,6 @@ struct LoginView_Previews: PreviewProvider {
         LoginView()
             .environmentObject(FirestoreManager())
             .environmentObject(HealthKitViewModel())
+//            .environmentObject(SharedData())
     }
 }

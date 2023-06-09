@@ -9,6 +9,8 @@ import SwiftUI
 
 struct Profile: View {
     @EnvironmentObject var vm: HealthKitViewModel
+    @EnvironmentObject var sharedData: SharedData
+    
     // About Section -------------------------------------
     @State private var sex_selection = "Male"
     @State private var height_selection = 60
@@ -29,8 +31,8 @@ struct Profile: View {
     let allergies = ["None", "Peanuts", "Fish", "Milk", "Shellfish", "Bamboo"]
     
     // Excercise Section ----------------------------------------
-    @State private var exercise_frequency_selection = "Moderately Active"
-    @State private var workout_preference_selection = "Gym"
+    //@State private var exercise_frequency_selection = "Moderately Active"
+    //@State private var workout_preference_selection = "Gym"
     let exercise = ["Light Active", "Moderately Active", "Active"]
     let workout_preference = ["Home", "Gym", "Outdoors", "No Preference"]
     
@@ -108,7 +110,7 @@ struct Profile: View {
                                         .frame(maxWidth: .infinity, alignment: .trailing)
                                 }
                             }
-                            // 48-84
+                            // 
                             //                            DatePicker(selection: .constant(Date()), displayedComponents: .date) {
                             //
                             //                            }
@@ -204,7 +206,7 @@ struct Profile: View {
                         Section(header: Text("Exercise")) {
                             HStack {
                                 Text("Exercise Frequency ")
-                                Picker("", selection: $exercise_frequency_selection) {
+                                Picker("", selection: $sharedData.exercise_frequency_selection) {
                                     ForEach(exercise, id: \.self) {
                                         Text($0)
                                     }
@@ -213,7 +215,7 @@ struct Profile: View {
                             }
                             HStack {
                                 Text("Workout Preference ")
-                                Picker("", selection: $workout_preference_selection) {
+                                Picker("", selection: $sharedData.workout_preference_selection) {
                                     ForEach(workout_preference, id: \.self) {
                                         Text($0)
                                     }
@@ -354,6 +356,7 @@ struct Profile: View {
         static var previews: some View {
             Profile()
                 .environmentObject(HealthKitViewModel())
+                .environmentObject(SharedData())
         }
     }
 }
