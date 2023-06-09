@@ -7,11 +7,11 @@
 
 
 import SwiftUI
-import Firebase
-import FirebaseFirestore
-import FirebaseDatabase
+
+
 
 struct Sleep: View {
+    @StateObject var firestoreManager = FirestoreManager()
     @EnvironmentObject var vm: HealthKitViewModel
     @State var sleepTime = Date()
     @State var wakeUpTime = Date()
@@ -32,10 +32,10 @@ struct Sleep: View {
         }
     }
     let calendar = Calendar.current
-    @EnvironmentObject var firestoreManager: FirestoreManager
     
     
-    private let database = Database.database().reference()
+    
+    
     
     
     
@@ -72,11 +72,7 @@ struct Sleep: View {
         
 
     }
-//    func recommendedPath() {
-//        if (13 <= age && age < 19){
-//            RecommendationResultsTeens
-//        }
-//    }
+
         
 
     var datePickers: some View {
@@ -116,23 +112,7 @@ struct Sleep: View {
         totalMinutes = totalTimePassed.minute ?? 0
         
         
-        
-//        let docData: [String: Any] = [
-//            "sleep_avg": 0,
-//            "sleep_hours": totalHours,
-//            "sleep_total": totalTimePassed,
-//        ]
-//        let db = Firestore.firestore()
-//
-//        let docRef = db.collection("sleep").document(firestoreManager.userUID)
-//
-//        docRef.setData(docData) { error in
-//            if let error = error {
-//                print("Error writing document: \(error)")
-//            } else {
-//                print("Document successfully written!")
-//            }
-//        }
+
     }
     
     
@@ -202,9 +182,14 @@ struct Sleep: View {
 
 struct Sleep_Previews: PreviewProvider {
     static var previews: some View {
-        Sleep().environmentObject(HealthKitViewModel())
+        Sleep()
+            
+            .environmentObject(HealthKitViewModel())
+            
+        
     }
 }
+
 
 
 
