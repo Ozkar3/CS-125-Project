@@ -12,6 +12,9 @@ struct Activity: View {
     @State private var completedWorkouts: [Workout] = [] // stores workouts user has selected
     @State private var currentWorkoutTime: Int = 0 // total exercise time completed
     
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
+
     // selection of workouts with attributes to be able to find and filter based off user data/preferences
     @State private var workouts = [
         Workout(id: UUID(), name: "Squats", intensity: "High", score: 0, type: "Home", time: 1.0),
@@ -254,7 +257,8 @@ struct Activity: View {
                     // Hydration Section ----------------------------------------
                     Section(header: Text("Hydration")) {
                         HStack {
-                            Text("Water Consumed (L)")
+                            let temp_str = String(format:"%.2f", hydration_level)
+                            Text("Water Consumed: "+temp_str+" L")
                             Slider(value: $hydration_level, in: 0...5, step: 0.1)
                         }
                     }
@@ -262,7 +266,7 @@ struct Activity: View {
                     // Steps Section ----------------------------------------
                     Section(header: Text("Steps")) {
                         HStack {
-                            Text("Steps Taken")
+                            Text("Steps Taken:")
                             TextField("Enter steps taken...", value: $steps_taken, formatter: NumberFormatter())
                         }
                     }
@@ -314,6 +318,9 @@ struct Activity: View {
                     }
                     
                     Section(header: Text("Completed")) {
+                        ForEach(firestoreManager.completedActivities, id:\.self) { workout in
+                            Text(workout)
+                        }
                         ForEach(completedWorkouts) { workout in
                             Text(workout.name)
                         }
@@ -330,6 +337,7 @@ struct Activity: View {
         static var previews: some View {
             Activity()
                 .environmentObject(SharedData())
+                .environmentObject(FirestoreManager())
         }
     }
 }

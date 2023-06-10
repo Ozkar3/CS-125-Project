@@ -13,6 +13,7 @@ import FirebaseFirestore
 class FirestoreManager: ObservableObject {
     @Published var userUID: String = ""
     @Published var userName: String = ""
+    @Published var completedActivities = [String]()
     
     private var db = Firestore.firestore()
     
@@ -28,10 +29,23 @@ class FirestoreManager: ObservableObject {
             else {
                 
                 self.userName = snapshot?.get("name") as? String ?? ""
-                print("name: "+self.userName)
+                print("name: " + self.userName)
                
             }
         }
+        
+        self.db.collection("physical").document(userUID).getDocument { snapshot, error in
+            if error != nil {
+                print("error")
+            }
+            else {
+                
+                self.completedActivities = snapshot?.get("completed_workouts") as? [String] ?? []
+                print(self.completedActivities)
+               
+            }
+        }
+        
         
         print("loaded user successfully")
         
