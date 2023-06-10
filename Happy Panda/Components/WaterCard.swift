@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct WaterCard: View {
+    
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
     var body: some View {
         VStack {
             Text("Water Intake")
@@ -18,7 +21,8 @@ struct WaterCard: View {
                 .foregroundColor(.white)
             
             Spacer()
-            Text("0\nCups")
+            let temp_str = String(format:"%.2f", firestoreManager.waterIntake)
+            Text(temp_str + "\nLiters")
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .font(Font.custom("Montserrat-SemiBold", size:15))
                 .padding(.leading, 15)
@@ -35,6 +39,6 @@ struct WaterCard: View {
 
 struct WaterCard_Previews: PreviewProvider {
     static var previews: some View {
-        WaterCard()
+        WaterCard().environmentObject(FirestoreManager())
     }
 }

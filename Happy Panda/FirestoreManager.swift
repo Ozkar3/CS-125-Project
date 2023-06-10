@@ -14,6 +14,9 @@ class FirestoreManager: ObservableObject {
     @Published var userUID: String = ""
     @Published var userName: String = ""
     @Published var completedActivities = [String]()
+    @Published var steps: Int = 0
+    @Published var sleepHours: Int = 0
+    @Published var waterIntake: Double = 0.0
     
     private var db = Firestore.firestore()
     
@@ -34,6 +37,7 @@ class FirestoreManager: ObservableObject {
             }
         }
         
+        // load physical data
         self.db.collection("physical").document(userUID).getDocument { snapshot, error in
             if error != nil {
                 print("error")
@@ -42,7 +46,34 @@ class FirestoreManager: ObservableObject {
                 
                 self.completedActivities = snapshot?.get("completed_workouts") as? [String] ?? []
                 print(self.completedActivities)
+                
+                self.steps = snapshot?.get("steps") as? Int ?? 0
+                print(self.steps)
                
+            }
+        }
+        
+        // load sleep data
+        self.db.collection("sleep").document(userUID).getDocument { snapshot, error in
+            if error != nil {
+                print("error")
+            }
+            else {
+                self.sleepHours = snapshot?.get("sleep_hours") as? Int ?? 0
+                print(self.sleepHours)
+                
+            }
+        }
+        
+        // load other data
+        self.db.collection("other").document(userUID).getDocument { snapshot, error in
+            if error != nil {
+                print("error")
+            }
+            else {
+                self.waterIntake = snapshot?.get("water_intake") as? Double ?? 0.0
+                print(self.waterIntake)
+                
             }
         }
         
@@ -103,6 +134,39 @@ class FirestoreManager: ObservableObject {
         
         print("created user")
     }
+    
+    func setWater(amount: Double){
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        let data = ["water_intake":amount]
+        Firestore.firestore().collection("other").document(uid).setData(data) { error in
+            if error != nil {
+                // ERROR
+            }
+            else {
+                print("successfully added user to other")
+            }
+        }
+        self.waterIntake = amount
+        
+    }
+    
+    func setSteps(amount: Int){
+        guard let uid = Auth.auth().currentUser?.uid else {return}
+        
+        let data = ["steps":amount]
+        Firestore.firestore().collection("physical").document(uid).setData(data) { error in
+            if error != nil {
+                // ERROR
+            }
+            else {
+                print("successfully added user to other")
+            }
+        }
+        
+    }
+    
+    
     
     
 }

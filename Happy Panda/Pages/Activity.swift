@@ -118,6 +118,7 @@ struct Activity: View {
             currentWorkoutTime += Int(getAdjustedTime(for: workout))
         }
         completedWorkouts.append(workout)
+
     }
     
     // happens when user selects(-) to the workout
@@ -260,6 +261,7 @@ struct Activity: View {
                             let temp_str = String(format:"%.2f", hydration_level)
                             Text("Water Consumed: "+temp_str+" L")
                             Slider(value: $hydration_level, in: 0...5, step: 0.1)
+                            
                         }
                     }
                     

@@ -69,8 +69,8 @@ struct Home: View {
                 }
                 .offset(y:10)
                 
-                RecipeCard()
-                    .onTapGesture {tabSelection=3}
+//                RecipeCard()
+//                    .onTapGesture {tabSelection=3}
             }
         })
     }

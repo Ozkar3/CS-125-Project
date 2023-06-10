@@ -9,9 +9,11 @@ import SwiftUI
 
 struct SleepCard: View {
     
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
     var body: some View {
         VStack {
-            Text("Sleep\n\n0.0\nHours")
+            Text("Sleep\n\n\(firestoreManager.sleepHours)\nHours")
                 .font(Font.custom("Montserrat-SemiBold", size:15))
                 .padding(.leading, 20)
                 .foregroundColor(.white)
@@ -28,6 +30,6 @@ struct SleepCard: View {
 
 struct SleepCard_Previews: PreviewProvider {
     static var previews: some View {
-        SleepCard()
+        SleepCard().environmentObject(FirestoreManager())
     }
 }

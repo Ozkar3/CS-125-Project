@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct StepCard: View {
+    @EnvironmentObject var firestoreManager: FirestoreManager
+    
     var body: some View {
         VStack {
             Text("Steps")
@@ -15,7 +17,7 @@ struct StepCard: View {
                 .font(Font.custom("Montserrat-SemiBold", size:15))
                 .padding()
             
-            Text("0\nSteps")
+            Text("\(firestoreManager.steps)\nSteps")
                 .frame(maxWidth: .infinity, maxHeight:.infinity, alignment: .center)
                 .font(Font.custom("Montserrat-SemiBold", size:15))
                 .multilineTextAlignment(.center)
@@ -32,6 +34,6 @@ struct StepCard: View {
 
 struct StepCard_Previews: PreviewProvider {
     static var previews: some View {
-        StepCard()
+        StepCard().environmentObject(FirestoreManager())
     }
 }
